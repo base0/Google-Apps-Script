@@ -1,10 +1,12 @@
 function myFunction() {
   var calendarName = 'Work';
-  var events = getEvents('2018-11-1', '2018-12-1', calendarName);   // default calendar if don't send the last parameter
+  var events = getEvents('2018-11-1', '2018-12-1');   // default calendar if don't send the last parameter
+  var ss = SpreadsheetApp.create("Calendar Summary");
+  Logger.log(ss.getUrl());
   for (var i = 0; i < events.length; i++) {
     var event = events[i];
-    Logger.log(event.getTitle());
-    Logger.log(event.getDescription());
+    ss.getRange('A' + (i+1)).setValue(event.getTitle());
+    ss.getRange('B' + (i+1)).setValue(event.getDescription());
   }
 }
 
