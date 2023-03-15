@@ -15,6 +15,6 @@ function myFunction() {
   const r = data.data;  
   var result = `${r.city} ${r.state} ${r.country} `
              + `${r.current.pollution.aqius} `
-             + `${r.location.coordinates[0]} ${r.location.coordinates[0]}`;
+             + `${r.location.coordinates[0]} ${r.location.coordinates[1]}`;
   Logger.log(result); 
 }
